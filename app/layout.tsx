@@ -4,16 +4,16 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const libreBaskerville = Libre_Baskerville({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-libre-baskerville'
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-libre-baskerville"
 });
 
 export const metadata: Metadata = {
   title: "Horizon",
-  description: "Horizons , a modern banking platform for everbody's use",
-  icons:{
-    icon:'/icons/logo.svg'
+  description: "Horizon, a modern banking platform",
+  icons: {
+    icon: "/icons/logo.svg"
   }
 };
 
@@ -24,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${libreBaskerville.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${libreBaskerville.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
+
