@@ -51,12 +51,12 @@ const AuthForm = ({ type }: { type: string }) => {
       }
 
       if (type === 'sign-in') {
-        //const response = await signIn({
-        //  email: data.email,
-        //  password: data.password,
-        //});
+        // const response = await signIn({
+        //   email: data.email,
+        //   password: data.password,
+        // });
 
-        //if (response) router.push('/');
+        // if (response) router.push('/');
       }
     } catch (error) {
       console.log(error);
@@ -170,16 +170,18 @@ const AuthForm = ({ type }: { type: string }) => {
           </form>
         </Form>
       )}
-      <footer className="flex justify-center gap-1">
-        <p className="text-14 font-normal text-gray-600">
-          {type === 'sign-in'
-            ? "Don't have an account?"
-            : 'Already have an account?'}
-        </p>
-        <Link href={type === 'sign-in' ? 'sign-up' : 'sign-in'} className="form-link">
-          {type === 'sign-in' ? 'Sign Up' : 'Sign In'}
-        </Link>
-      </footer>
+      {!user && (
+        <footer className="flex justify-center gap-1">
+          <p className="text-14 font-normal text-gray-600">
+            {type === 'sign-in'
+              ? "Don't have an account?"
+              : 'Already have an account?'}
+          </p>
+          <Link href={type === 'sign-in' ? 'sign-up' : 'sign-in'} className="form-link">
+            {type === 'sign-in' ? 'Sign Up' : 'Sign In'}
+          </Link>
+        </footer>
+      )}
     </section>
   );
 };
